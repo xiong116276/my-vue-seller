@@ -22,7 +22,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -33,12 +33,12 @@
   }
   .tab{
     display: flex;
-  }
-  .tab .tab-item{
-    flex: 1;
-  }
-  .tab .tab-item.router-link-active{
-    background-color: blue;
-    color: #fff;
+    .tab-item{
+      flex: 1;
+      &.router-link-active{
+        background-color: blue;
+        color: #fff;
+      }
+    }
   }
 </style>
