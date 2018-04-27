@@ -5,12 +5,13 @@ import goods from '../components/v-goods/v-goods';
 import pinglun from '../components/v-pinglun/v-pinglun';
 import seller from '../components/v-seller/v-seller';
 
-import allgoods from '../components/v-goods/all-goods/all-goods';
-import xiaoliang from '../components/v-goods/xiaoliang/xiaoliang';
+// import allgoods from '../components/v-goods/all-goods/all-goods';
+// import xiaoliang from '../components/v-goods/xiaoliang/xiaoliang';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -19,20 +20,20 @@ const router = new VueRouter({
     {
       path: '/goods',
       component: goods,
-      children:[//嵌套路由
-        {
-          path: '/goods/',
-          redirect: '/goods/allgoods',
-        },
-        {
-          path: '/goods/allgoods',
-          component: allgoods
-        },
-        {
-          path: '/goods/xiaoliang',
-          component: xiaoliang
-        },
-      ]
+      // children:[//嵌套路由
+      //   {
+      //     path: '',
+      //     redirect: 'allgoods',
+      //   },
+      //   {
+      //     path: 'allgoods',
+      //     component: allgoods
+      //   },
+      //   {
+      //     path: 'xiaoliang',
+      //     component: xiaoliang
+      //   },
+      // ]
     },
     {
       path: '/pinglun',
@@ -41,9 +42,6 @@ const router = new VueRouter({
     {
       path: '/seller',
       component: seller
-    },{
-      path: '/allgoods',
-      component: allgoods
     }
   ]
 });

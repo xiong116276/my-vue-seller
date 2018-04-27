@@ -1,0 +1,183 @@
+@charset "utf-8";
+@import "../../../static/css/mixins";
+#header{
+  position: relative;
+  height: 268px;
+  overflow:hidden;
+  background: rgba(7, 17, 27, 0.5);
+  .background{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(10px);
+    z-index: -1;
+    img{
+      width: 100%;
+    }
+  }
+}
+.content-wrapper{
+  position: relative;
+  padding: 48px 24px 36px 48px;
+}
+.seller-avatar{
+  display: inline-block;
+  float: left;
+  width: 128px;
+  height: 128px;
+  border-radius: 4px;
+  margin-right: 32px;
+  overflow: hidden;
+}
+.header-center{
+  display: inline-block;
+  margin-top: 2px;
+  .brand{
+    display: inline-block;
+    height: 36px;
+    width: 60px;
+    @include bg-img('images/brand');
+    background-size: 60px 36px;
+    vertical-align: top;
+  }
+  .name{
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 36px;
+    margin-left: 12px;
+  }
+  .description{
+    margin:16px 0 20px;
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 24px;
+    font-weight: 200;
+  }
+  .supports{
+    .icon-supports{
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-size: 24px 24px;
+      vertical-align: top;
+      &.manjian{
+        @include bg-img("images/decrease_1");
+      }
+      &.dazhe{
+        @include bg-img("images/discount_1");
+      }
+      &.tejia{
+        @include bg-img("images/special_1");
+      }
+      &.fapiao{
+        @include bg-img("images/invoice_1");
+      }
+      &.baozhang{
+        @include bg-img("images/guarantee_1");
+      }
+    }
+    .text{
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 200;
+      line-height: 24px;
+    }
+  }
+}
+.btn-supports{
+  position: absolute;
+  right: 24px;
+  bottom: 36px;
+  padding: 14px 16px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 200;
+  height: 24px;
+  line-height: 24px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 25px;
+  vertical-align: top;
+}
+.bulletin{
+  height: 56px;
+  line-height: 56px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 200;
+  padding: 0 24px;
+  background-color: rgba(7,17,27,0.2);
+  .icon-bulletin{
+    float: left;
+    width: 44px;
+    height: 56px;
+    @include bg-img("images/bulletin");
+    background-size: 44px 24px;
+    background-position: center;
+    //margin:16px 8px 0 0;
+  }
+  .text{
+    float: left;
+    width: 635px;
+    line-height: 58px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 8px;
+    padding-top: 2px;
+  }
+  .icon-zuoyoujiantou{
+    position: absolute;
+    right: 24px;
+    bottom:0;
+  }
+}
+.popup-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  .mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(7,17,27,0.8);
+    -webkit-filter: blur();
+    z-index: -10;
+  }
+  .popup-content{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 128px 72px 192px;
+    overflow: auto;
+    text-align: center;
+    .name{
+      font-size: 32px;
+      font-weight: 700;
+      color:#fff;
+      line-height: 32px;
+    }
+    .icon-cha{
+      position: absolute;
+      margin: auto;
+      left:0;
+      right: 0;
+      bottom: 64px;
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      color: rgba(255,255,255,0.5);
+    }
+  }
+}
+
+
