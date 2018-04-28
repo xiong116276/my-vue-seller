@@ -19,9 +19,12 @@
     }
   }
 }
-
+html{
+  overflow-x: hidden;
+}
 body{
   max-width: 750px;
   margin: 0 auto;
+  overflow-x: hidden;
   background-color: #f2f4f6;
 }

@@ -11,7 +11,7 @@ import seller from '../components/v-seller/v-seller';
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',

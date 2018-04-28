@@ -1,20 +1,16 @@
 <template>
   <div>
     <ul id="stars" :class="starType">
-      <!--<li v-for="(item,index) in starsLength"></li>-->
-      <li class="star-item star-on"></li>
-      <li class="star-item star-on"></li>
-      <li class="star-item star-on"></li>
-      <li class="star-item star-half"></li>
-      <li class="star-item star-off"></li>
+      <li class="star-item" v-for="item in starRender" :class="item"></li>
     </ul>
   </div>
 </template>
 
 <script type="es6">
-  const star_on = 'on';
-  const star_off = 'off';
-  const star_half = 'half';
+  const star_on = 'star-on';
+  const star_off = 'star-off';
+  const star_half = 'star-half';
+
 
   export default {
     name: "stars",
@@ -24,18 +20,36 @@
     },
     data:function () {
       return{
-        starsLength:5,
+        starsLength : 5,
+        starsMap:[]
       }
+    },
+    mounted:function () {
+
     },
     computed:{
       starType:function () {
         return 'star-'+this.size;
       },
       starRender:function () {
-        let arr=[];
-
-
+        let result = [];
+        let score = Math.floor(this.score *2 )/2;//余数超过0.5显示一半，小于0.5不显示
+        let hasHalf = score%1 !==0;
+        let scoreInt = Math.floor(score);
+        for (let i =0 ;i<scoreInt;i++){
+          result.push(star_on);
+        }
+        if(hasHalf){
+          result.push(star_half);
+        }
+        while(result.length < this.starsLength){
+          result.push(star_off)
+        }
+        return result;
       }
+    },
+    methods:{
+
     }
   }
 </script>
@@ -46,9 +60,6 @@
     margin: 32px auto 56px;
     .star-item{
       display: inline-block;
-      &:last-child{
-        margin-right: 0;
-      }
     }
     &.star-24{
       .star-item{
@@ -56,6 +67,9 @@
         height: 20px;
         margin-right: 20px;
         background-size: 20px 20px;
+        &:last-child{
+          margin-right: 0;
+        }
       }
       .star-on{
         @include bg-img("images/star24_on");
@@ -73,6 +87,9 @@
         height: 30px;
         margin-right: 30px;
         background-size: 30px 30px;
+        &:last-child{
+          margin-right: 0;
+        }
       }
       .star-on{
         @include bg-img("images/star36_on");
@@ -90,6 +107,9 @@
         height: 38px;
         margin-right: 40px;
         background-size: 40px 38px;
+        &:last-child{
+          margin-right: 0;
+        }
       }
       .star-on{
         @include bg-img("images/star48_on");

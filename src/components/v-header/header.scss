@@ -56,35 +56,35 @@
     line-height: 24px;
     font-weight: 200;
   }
-  .supports{
-    .icon-supports{
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      background-size: 24px 24px;
-      vertical-align: top;
-      &.manjian{
-        @include bg-img("images/decrease_1");
-      }
-      &.dazhe{
-        @include bg-img("images/discount_1");
-      }
-      &.tejia{
-        @include bg-img("images/special_1");
-      }
-      &.fapiao{
-        @include bg-img("images/invoice_1");
-      }
-      &.baozhang{
-        @include bg-img("images/guarantee_1");
-      }
+}
+.supports{
+  .icon-supports{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    vertical-align: top;
+    &.manjian{
+      @include bg-img("images/decrease_1");
     }
-    .text{
-      color: #ffffff;
-      font-size: 20px;
-      font-weight: 200;
-      line-height: 24px;
+    &.dazhe{
+      @include bg-img("images/discount_1");
     }
+    &.tejia{
+      @include bg-img("images/special_1");
+    }
+    &.fapiao{
+      @include bg-img("images/invoice_1");
+    }
+    &.baozhang{
+      @include bg-img("images/guarantee_1");
+    }
+  }
+  .text{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 24px;
   }
 }
 .btn-supports{
@@ -151,32 +151,109 @@
     -webkit-filter: blur();
     z-index: -10;
   }
+  .icon-cha{
+    display: inline-block;
+    margin: 64px auto;
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: rgba(255,255,255,0.5);
+  }
   .popup-content{
     position: absolute;
     top:0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 128px 72px 192px;
-    overflow: auto;
     text-align: center;
+    overflow: auto;
+    .content{
+      padding: 128px 72px 0;
+      overflow: auto;
+    }
     .name{
       font-size: 32px;
       font-weight: 700;
       color:#fff;
       line-height: 32px;
     }
-    .icon-cha{
-      position: absolute;
-      margin: auto;
-      left:0;
-      right: 0;
-      bottom: 64px;
-      font-size: 64px;
-      width: 64px;
-      height: 64px;
-      color: rgba(255,255,255,0.5);
+  }
+  .popup-title{
+    display: flex;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 48px;
+    .text{
+      margin: 0 24px;
     }
+    .line-h{
+      position: relative;
+      flex: 1;
+      top: -14px;
+      border-bottom:1px solid rgba(255,255,255,0.5);
+    }
+  }
+  .popup-item{
+    text-align: left;
+    margin-bottom: 56px;
+    .item-content{
+      padding: 0 24px;
+      font-size: 24px;
+      font-weight: 200;
+      color: #fff;
+      line-height: 24px;
+      .supports{
+        .icon-supports{
+          width: 32px;
+          height: 32px;
+          background-size: 32px 32px;
+          vertical-align: text-bottom;
+          &.manjian{
+            @include bg-img("images/decrease_2");
+          }
+          &.dazhe{
+            @include bg-img("images/discount_2");
+          }
+          &.tejia{
+            @include bg-img("images/special_2");
+          }
+          &.fapiao{
+            @include bg-img("images/invoice_2");
+          }
+          &.baozhang{
+            @include bg-img("images/guarantee_2");
+          }
+        }
+      }
+      .text{
+        display: inline-block;
+        margin: 0 0 24px 12px;
+      }
+    }
+    .seller-bulletin{
+      font-size: 24px;
+      font-weight: 200;
+      line-height: 48px;
+    }
+  }
+}
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
